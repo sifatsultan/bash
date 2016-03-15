@@ -1,0 +1,124 @@
+a = a*25
+
+# for decimal stuff
+echo "scale=2; 1/2" | bc
+echo "scale=21; 1/2" | bc
+
+# indicate error or succesful build
+exit 1
+
+#array
+name[66] = "Joe"
+name[32] = "John"
+name[12] = "Jimbo"
+
+echo ${name[66]}
+
+names2= ([12]="Jimbo" [66]="Joe" [32]="John") #specific index
+names3= ("Jimbo" "Joe" "John") #default index
+names3+=("Adam" "Fred") # to append
+
+#key-value pair>>associative array
+namesTest["ok"]="Peter"
+
+#nittygritty
+echo ${#names3[@]} # the "#" ask for number of items, "@" tells all
+echo ${names3[@]} # it will echo all the elements
+echo ${names3[@]:1:2} # show all the elements from 1 to 2
+
+echo ${names[@]/e/xx} # replace e with xx
+
+#SELECT STATEMENTS
+if [[ $num -gt 1 || "$str" = "cba" || -e $file ]]
+then
+ echo "True!"
+else
+ 
+for strings comparison, normal operator can be used
+
+-eq equal to
+-ne not equal to
+-lt less than
+-gt greater than
+-gt && -eq >> -ge greater than and equal to
+
+# switch statements
+
+case $var in 
+  "dog")
+    echo "Woof!"
+    echo "(Matched 1st)";;
+  "cat")
+    echo "Meow"
+    echo "(Matched 2nd)";;
+  *)
+    echo "No idea!"
+    echo "Matched default!";;
+esac
+
+# debug
+#!/bash/bin
+
+#iteration
+for (( i=1 ; i<=5 ; i++ ))
+do
+	echo $1
+done
+
+i=1; j=1
+while [[ $1 -le 5 ]]
+do
+	echo $i
+	((i++))
+done
+
+for i in fruits
+do
+	echo $i
+done
+
+for i in seq 0 5 20
+do 
+	echo $i
+done
+
+for i in $(ls)
+do
+	echo $i
+done
+
+#create menu in a woof
+
+menu_options="Cat Dog Exit"
+PS3 ="Select an options"
+
+select 
+
+#function time
+showtime()
+{
+	echo `date+alskdf
+	return
+}
+
+showtime
+
+#internal variables
+
+# filter commands
+ls | sort -u | grep .txt
+
+echo "this is a test" | cut -d " " -f 4
+
+df -h | head -n 3
+
+ps aux | grep -i bash
+#show lines with bash in it
+
+echo "this is awful" | sed 
+#sed does anything with it
+
+awk '{print $2:}
+
+
+
